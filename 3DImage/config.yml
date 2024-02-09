@@ -1,0 +1,10 @@
+image_size:
+  - 64
+  - 64
+  - 64
+radius: 10
+num_samples: 100
+data_path: synthetic_dataset.npz
+epochs: 50
+batch_size: 10
+validation_split: 0.2
