@@ -30,12 +30,19 @@ logging.basicConfig(
 
 def define_autoencoder(input_shape):
     input_layer = Input(shape=input_shape)
+    print("####Input Layer###", input_layer.shape)
 
     encoder = Conv3D(64, kernel_size=(3, 3, 3), activation="relu", padding="same")(
         input_layer
     )
+    print("####Input Layer###", encoder.shape)
+
     encoder = BatchNormalization()(encoder)
+    print("####Input Layer###", encoder.shape)
+
     encoder = MaxPooling3D(pool_size=(2, 2, 2), padding="same")(encoder)
+    print("####Input Layer###", encoder.shape)
+
     encoder = Conv3D(128, kernel_size=(3, 3, 3), activation="relu", padding="same")(
         encoder
     )
